@@ -1,10 +1,6 @@
 <?php
 include ('Stripegateway.php');
 $myStripe = new Stripegateway();
-if(isset($_POST['btnsubmit'])){
-	$data = array('ID' => 'cus_Dqsq58SM7pCGD0',
-		'description' => 'Customer adalah raja'
-		);
-	$result = $myStripe->customer($data);
+$data = array('id' => 'cus_Dqsq58SM7pCGD0', 'description' => 'tamu adalah raja dunia');
+$result = $myStripe->editcustomer($data);
 	echo "<pre>"; print_r($result);
-}

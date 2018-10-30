@@ -30,7 +30,7 @@ class Stripegateway{
 	public function update_charger($data){
 		$message = "";
 		try{
-			$ch = \Stripe\Charge::retrieve($data['id']);
+			$ch = \Stripe\Charge::retrieve($data['ID']);
 			$ch ->description = $data['description'];
 			$message = $ch->save();
 		}catch(Exception $e){
@@ -53,8 +53,8 @@ class Stripegateway{
 	public function editcustomer($data){
 		$message = "";
 		try{
-			$cu = \Stripe\Customer::retrieve(array($data['ID']));
-			
+			$cu = \Stripe\Customer::retrieve($data['id']);
+			$cu->description = $data['description'];
 			$cu->save();
 		}catch(Exception $e){
 			$message = $e->getMessage();
