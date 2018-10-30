@@ -1,6 +1,7 @@
 <?php
 include('Stripegateway.php');
 $myStripe = new Stripegateway();
-$data = array('cus_Dqsq58SM7pCGD0');
-$result = $myStripe->customer($data);
+$data = array('ID' => 'cus_Dsgkl9dqi2X7BX');
+$result = $myStripe->delcustomer($data);
 echo "<pre>"; print_r($result);
+?>

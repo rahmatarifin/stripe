@@ -53,19 +53,20 @@ class Stripegateway{
 	public function editcustomer($data){
 		$message = "";
 		try{
-			$cu = \Stripe\Customer::retrieve(array($data['id']));
-			$cu = 
+			$cu = \Stripe\Customer::retrieve(array($data['ID']));
+			
 			$cu->save();
 		}catch(Exception $e){
 			$message = $e->getMessage();
 		}
 		return $message;
 	}
+	
 
 	public function delcustomer($data){
 		$message = "";
 		try{
-			$del = \Stripe\Customer::retrieve($data['id']);
+			$del = \Stripe\Customer::retrieve($data['ID']);
 			$del->delete();
 		}catch(Exception $e){
 			$message = $e->getMessage();
